@@ -3,6 +3,8 @@ var graphqlClient = require('graphql-client')
 const keys = require('../config/keys')
 var userModules = {}
 
+console.log(keys.chingu_api.endpoint);
+
 var client = graphqlClient({
   url: keys.chingu_api.endpoint
 })
