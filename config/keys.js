@@ -4,7 +4,8 @@ module.exports = {
   },
   github: {
     clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: process.env.GITHUB_CALLBACK_URL
   },
   chingu_api: {
     endpoint: process.env.CHINGU_API_ENDPOINT

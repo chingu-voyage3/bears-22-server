@@ -21,7 +21,7 @@ passport.deserializeUser((id, done) => {
 githubOptions = {
   clientID: keys.github.clientID,
   clientSecret: keys.github.clientSecret,
-  callbackURL: 'https://bears22authserver.herokuapp.com/auth/github/redirect'
+  callbackURL: keys.github.callbackURL
 }
 
 githubCB = (accessToken, refreshToken, profile, done) => {
