@@ -17,8 +17,8 @@ router.get(
 router.get(
   '/github/redirect',
   passport.authenticate('github', {
-    successRedirect: '/',
-    failureRedirect: '/login'
+    successRedirect: 'https://doum.herokuapp.com/',
+    failureRedirect: 'https://doum.herokuapp.com/login'
   })
 )
 
