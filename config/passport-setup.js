@@ -21,13 +21,14 @@ passport.deserializeUser((id, done) => {
 githubOptions = {
   clientID: keys.github.clientID,
   clientSecret: keys.github.clientSecret,
-  callbackURL: keys.github.callbackURL
+  callbackURL: keys.github.callbackURL,
+  scope: ['user:email']
 }
 
 githubCB = (accessToken, refreshToken, profile, done) => {
   console.log('Authenticated! Reached the callback')
   console.log(profile)
-  user_github_email = profile._json.email
+  user_github_email = profile.emails[0].value
   console.log('User email: ' + user_github_email)
 
   //Check if user is a chingu member
