@@ -13,8 +13,19 @@ const data = require('./data.json')
 // Set up express app
 const app = express()
 
+// configure CORS for accessing the prod and dev domains
+const corsOptions = {
+  origin: [
+    'https://doum.herokuapp.com/',
+    /^http:\/\/localhost(:[0-9]{0,4})?\/?$/,
+  ],
+  methods: ['GET', 'POST'],
+  exposedHeaders: ['Access-Control-Allow-Origin'],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
 // Set up middlewares
-app.use(cors())
+app.use(cors(corsOptions))
 
 //Set up session handling
 app.use(
