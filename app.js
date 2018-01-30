@@ -19,9 +19,9 @@ const corsOptions = {
     'https://doum.herokuapp.com/',
     /^http:\/\/localhost(:[0-9]{0,4})?\/?$/,
   ],
-  methods: ['GET', 'POST'],
-  exposedHeaders: ['Access-Control-Allow-Origin'],
-  optionsSuccessStatus: 200,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  exposedHeaders: ['x-auth-token']
 };
 // Set up middlewares
 app.use(cors(corsOptions))
