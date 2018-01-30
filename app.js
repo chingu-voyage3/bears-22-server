@@ -21,7 +21,6 @@ const corsOptions = {
   ],
   methods: ['GET', 'POST'],
   exposedHeaders: ['Access-Control-Allow-Origin'],
-  credentials: true,
   optionsSuccessStatus: 200,
 };
 // Set up middlewares
