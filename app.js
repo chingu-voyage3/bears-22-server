@@ -15,10 +15,7 @@ const app = express()
 
 // configure CORS for accessing the prod and dev domains
 const corsOptions = {
-  origin: [
-    'https://doum.herokuapp.com/',
-    /^http:\/\/localhost(:[0-9]{0,4})?\/?$/,
-  ],
+  origin: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   exposedHeaders: ['x-auth-token']
