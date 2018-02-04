@@ -2,6 +2,7 @@
 //all paths are with /auth/ prefix
 const express = require('express')
 const passport = require('passport')
+const keys = require('../config/keys')
 
 // Set up Router
 const router = express.Router()
@@ -17,8 +18,8 @@ router.get(
 router.get(
   '/github/redirect',
   passport.authenticate('github', {
-    successRedirect: 'https://doum.herokuapp.com/',
-    failureRedirect: 'https://doum.herokuapp.com/login'
+    successRedirect: keys.redirects.loginSuccess,
+    failureRedirect: keys.redirects.failureRedirect
   })
 )
 
@@ -37,7 +38,7 @@ router.get('/user', isAuthenticated, function(req, res) {
 // Logout
 router.get('/logout', (req, res) => {
   req.logout()
-  res.redirect('https://doum.herokuapp.com/')
+  res.redirect(keys.redirects.logout)
 })
 
 // Export Routes
